@@ -3,10 +3,93 @@ code .
 
 if code . commond is mot working than open VS code and type command+shift+P and install code
 
-conda create -p venv python=3.10
+conda create -p venv python=3.12
 
 conda activate venv
+conda deactivate
 
 pip install -r requirements.txt
 pip install ipykernel
 pip install pandas
+
+python set.py
+python set.ipynb
+
+python --version
+
+-------------------------------------------------------------
+
+Method 1: Creating Environment Using Python's venv Module
+
+python -m venv <folder_name>
+python -m venv myenv
+
+This command will automatically create the folder in the name myenv and set up the environment inside it.
+
+Activating the Python Virtual Environment
+To activate this environment, navigate to the Scripts folder inside your environment directory. There is an activate file there. You can activate the environment by running:
+
+myenv\Scripts\activate
+
+Once activated, you will see the environment name in your terminal prompt.
+
+After activation, you can install any libraries you need using pip. For example:
+
+pip install pandas
+
+or
+
+pip install numpy
+
+These libraries will be installed only in this specific environment.
+
+-------------------------------------------------------------
+
+Method 2: Creating Environment Using virtualenv
+Another way, especially common in Linux, is using the virtualenv package. First, install it using pip:
+
+pip install virtualenv
+
+Then create a virtual environment by running:
+
+virtualenv -p python3 virtual_env_name
+
+For example:
+
+virtualenv -p python3 virtual_env
+
+This will create a virtual environment named virtual_env.
+
+To activate this environment, run:
+
+virtual_env\Scripts\activate
+
+After activation, you can install packages and work within this isolated environment. To deactivate, simply run:
+
+deactivate
+
+
+-------------------------------------------------------------
+
+Method 3: Creating Environment Using Conda
+The third and most common way I use is with Conda. For this, you need to have Anaconda installed. Anaconda manages environments and packages efficiently.
+
+To create an environment with Conda, run:
+
+conda create -p ./env_folder_name python=3.10 -y
+
+For example:
+
+conda create -p ./venv1 python=3.10 -y
+
+This command creates an environment named venv1 with Python 3.10, regardless of your base Python version.
+
+You can activate the Conda environment by running:
+
+conda activate ./venv1
+
+And deactivate it by:
+
+conda deactivate
+
+-------------------------------------------------------------
